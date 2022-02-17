@@ -73,7 +73,10 @@ Once you have executed the initial server setup, you can choose from any of the 
 - [Docker on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-use-ansible-to-install-and-set-up-docker-on-ubuntu-18-04)
 
 ```command
-sudo apt-add-repository ppa:ansible/ansible -y
+sudo apt update
+apt install software-properties-common -y
+sudo apt-add-repository --yes --update ppa:ansible/ansible
+#sudo apt-add-repository ppa:ansible/ansible -y
 sudo apt update -y
 sudo apt install ansible -y
 nano /etc/ansible/hosts
