@@ -72,14 +72,12 @@ Once you have executed the initial server setup, you can choose from any of the 
 ### Containers & K8s
 - [Docker on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-use-ansible-to-install-and-set-up-docker-on-ubuntu-18-04)
 
+```command
 sudo apt-add-repository ppa:ansible/ansible -y
-
 sudo apt update -y
-
 sudo apt install ansible -y
-
 nano /etc/ansible/hosts
-
+```
 [servers]
 server1 ansible_host=192.168.1.2
 server2 ansible_host=192.168.1.3
