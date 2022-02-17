@@ -99,6 +99,8 @@ ansible all -a "uptime" -u sonnyyu --ask-pass
 cd ~
 ssh-keygen
 git clone https://github.com/do-community/ansible-playbooks
+```
+```command
 cd ~/ansible-playbooks/setup_ubuntu1804
 ansible-playbook -l all -i /etc/ansible/hosts -u sonnyyu playbook.yml  -bK --ask-pass
 ```
