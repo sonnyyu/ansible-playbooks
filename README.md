@@ -73,7 +73,9 @@ Once you have executed the initial server setup, you can choose from any of the 
 - [Docker on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-use-ansible-to-install-and-set-up-docker-on-ubuntu-18-04)
 
 sudo apt-add-repository ppa:ansible/ansible -y
+
 sudo apt update -y
+
 sudo apt install ansible -y
 
 nano /etc/ansible/hosts
@@ -87,9 +89,13 @@ ansible_python_interpreter=/usr/bin/python3
 sudo apt purge ansible -y
 
 ansible all -m ping -u sonnyyu --ask-pass
+
 ansible all -a "df -h" -u sonnyyu --ask-pass
+
 ansible all -m apt -a "name=vim state=latest" -u sonnyyu -bK --ask-pass
+
 ansible all -a "uptime" -u sonnyyu --ask-pass
+
 ansible-playbook -l all -i /etc/ansible/hosts -u root playbook.yml --ask-pass
 
 cd ~
@@ -99,11 +105,13 @@ ssh-keygen
 git clone https://github.com/do-community/ansible-playbooks
 
 cd ~/ansible-playbooks/setup_ubuntu1804
+
 ansible-playbook -l all -i /etc/ansible/hosts -u sonnyyu playbook.yml  -bK --ask-pass
 
-
 cd ~/ansible-playbooks/wordpress-lamp_ubuntu1804
+
 ansible-playbook -l all -i /etc/ansible/hosts -u sonnyyu playbook.yml  -b
+
 [WARNING]: Module did not set no_log for update_password
 [WARNING]: Module did not set no_log for update_********
 
@@ -111,43 +119,62 @@ http://192.168.1.2/
 http://192.168.1.3/
 
 ssh sonnyyu@192.168.1.2
+
 ssh sonnyyu@192.168.1.3
+
 sudo apt-get remove --purge *apache2\* *mysql\* -y
+
 sudo apt-get autoremove -y
+
 sudo apt-get autoclean 
 
 
 cd ~/ansible-playbooks/docker_ubuntu1804
+
 ansible-playbook -l all -i /etc/ansible/hosts -u sonnyyu playbook.yml  -b
+
 ssh sonnyyu@192.168.1.2
+
 sudo docker ps -a
 
 cd ~/ansible-playbooks/lamp_ubuntu1804
+
 ansible-playbook -l all -i /etc/ansible/hosts -u sonnyyu playbook.yml  -b 
 
 http://192.168.1.2/info.php
 
 ssh sonnyyu@192.168.1.2
+
 ssh sonnyyu@192.168.1.3
+
 sudo apt-get remove --purge *apache2\* *mysql\* -y
+
 sudo apt-get autoremove -y
+
 sudo apt-get autoclean 
 
 cd ~/ansible-playbooks/lemp_ubuntu1804
+
 ansible-playbook -l all -i /etc/ansible/hosts -u sonnyyu playbook.yml  -b 
 
 ssh sonnyyu@192.168.1.2
+
 ssh sonnyyu@192.168.1.3
 
 [WARNING]: Module did not set no_log for update_password
 
 sudo apt-get remove --purge *nginx\* *mysql\* -y
+
 sudo apt-get autoremove -y
+
 sudo apt-get autoclean -y
 
 cd ~/ansible-playbooks/apache_ubuntu1804
-ansible-playbook -l all -i /etc/ansible/hosts -u sonnyyu playbook.yml  -bK 
+
+ansible-playbook -l all -i /etc/ansible/hosts -u sonnyyu playbook.yml  -bK
+
 http://192.168.1.2/
+
 http://192.168.1.3/
 
 
