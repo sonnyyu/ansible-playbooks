@@ -79,6 +79,7 @@ sudo apt-add-repository --yes --update ppa:ansible/ansible
 #sudo apt-add-repository ppa:ansible/ansible -y
 sudo apt update -y
 sudo apt install ansible -y
+ansible --version
 nano /etc/ansible/hosts
 ```
 
