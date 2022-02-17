@@ -98,7 +98,7 @@ ansible all -a "uptime" -u sonnyyu --ask-pass
 ```command
 cd ~
 ssh-keygen
-git clone https://github.com/do-community/ansible-playbooks
+git clone https://github.com/sonnyyu/ansible-playbooks
 ```
 ```command
 cd ~/ansible-playbooks/setup_ubuntu1804
